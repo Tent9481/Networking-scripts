@@ -24,13 +24,16 @@ def handle(client):
             message=client.recv(1024)
             broadcast(message)
         except:
-        index = clients.index(client)
-        clients.remove(client)
-        client.close()
-        nickname=nicknames[index]
-        broadcast(f'{nickname} left the chat!'.encode('ascii'))
-        nicknames.remove(nickname)
-        break
+            
+            
+        
+           index = clients.index(client)
+           clients.remove(client)
+           client.close()
+           nickname=nicknames[index]
+           broadcast(f'{nickname} left the chat!'.encode('ascii'))
+           nicknames.remove(nickname)
+           break
 
 #getting client object and address
 def receive():
